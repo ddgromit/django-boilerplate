@@ -5,76 +5,24 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="author" content="" />
-<title>{% block practice %}Practice{% endblock %}</title>
+
+<title>{% block title %}{% endblock %}</title>
 <!--<link rel="shortcut icon" type="image/bmp" href="/static/images/favicon.gif" />-->
-{% block css %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/base.css" media="screen,projection" />{% endblock %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/reset.css" media="screen,projection" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/base.css" media="screen,projection" />
+{% endblock %}
+
 {% block javascript %}
 {% endblock javascript %}
 
 {% block analytics %}
-{% if is_prod %}
-<script type="text/javascript">
-  var _kmq = _kmq || [];
-  function _kms(u){
-    setTimeout(function(){
-      var s = document.createElement('script'); var f = document.getElementsByTagName('script')[0]; s.type = 'text/javascript'; s.async = true;
-      s.src = u; f.parentNode.insertBefore(s, f);
-    }, 1);
-  }
-  _kms('//i.kissmetrics.com/i.js');_kms('//doug1izaerwt3.cloudfront.net/bbf31712d273d1431a273851fe9ad598442aa74f.1.js');
-</script>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-24846865-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-{% else %}
-<script type="text/javascript">
-  var _kmq = _kmq || [];
-  function _kms(u){
-    setTimeout(function(){
-      var s = document.createElement('script'); var f = document.getElementsByTagName('script')[0]; s.type = 'text/javascript'; s.async = true;
-      s.src = u; f.parentNode.insertBefore(s, f);
-    }, 1);
-  }
-  _kms('//i.kissmetrics.com/i.js');_kms('//doug1izaerwt3.cloudfront.net/b6fe6e4074dee09bed78f6bae1b8626bdf5e7c2a.1.js');
-</script>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-24846865-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-{% endif %}
 {% endblock analytics %}
 
 </head>
-<body class="{% block site_class %}site{% endblock %}">
+<body class="">
 {% block body %}{% endblock %}
 
-{% block analytics_lower %}
-{% if is_prod %}
-<script type='text/javascript'> var mp_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://'); document.write(unescape('%3Cscript src="' + mp_protocol + 'api.mixpanel.com/site_media/js/api/mixpanel.js" type="text/javascript"%3E%3C/script%3E')); </script> <script type='text/javascript'> try {  var mpmetrics = new MixpanelLib('8ae4ab1db6e6152b1769fc036a705dff'); } catch(err) { null_fn = function () {}; var mpmetrics = {  track: null_fn,  track_funnel: null_fn,  register: null_fn,  register_once: null_fn, register_funnel: null_fn }; } </script>
-{% else %}
-<script type='text/javascript'> var mp_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://'); document.write(unescape('%3Cscript src="' + mp_protocol + 'api.mixpanel.com/site_media/js/api/mixpanel.js" type="text/javascript"%3E%3C/script%3E')); </script> <script type='text/javascript'> try {  var mpmetrics = new MixpanelLib('b6e1c3c3c70b3fba1e48d01ab2bfc94a'); } catch(err) { null_fn = function () {}; var mpmetrics = {  track: null_fn,  track_funnel: null_fn,  register: null_fn,  register_once: null_fn, register_funnel: null_fn }; } </script>
-{% endif %}
-{% endblock %}
 </body>
 </html>
 
